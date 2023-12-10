@@ -11,7 +11,7 @@ This service is supposed to be ran in Docker, although it is also possible to ru
 
 ## Run using pre-built image from GitHub Packages (recommended)
 
-This project has an Actions pipeline set up to automatically build a Docker image every time the project is updated. This way you don't have to build the service yourself and can use it immediately.
+This project has an Actions pipeline set up to automatically build a Docker image every time the project is updated. This way you don't have to build the service yourself and can satrt using it immediately.
 
 Example `docker-compose.yml`:
 
