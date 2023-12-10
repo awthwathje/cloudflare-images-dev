@@ -5,9 +5,9 @@ This service mocks the [Cloudflare Images](https://www.cloudflare.com/developer-
 
 The idea of this project is to mimic the API of Cloudflare Images locally. Although the functionality is not mocked. That is, this service doesn't do any image optimizations, since these are not needed during the development anyway. Instead it only focuses on uploading and serving the images, locally, without using a cloud.
 
-The service will return some errors, for example when an unknown variant is requested, but will not try to make any effort to optimize images, and will always serve the originally uploaded image, no matter which variant is requested.
+The service will return some errors, for example when an unknown variant is requested. As the service will not make any effort to optimize images, it will always serve the originally uploaded image, no matter which variant is requested.
 
-This service is supposed to be ran in Docker, although it's also possible to run it using a native Rust compiler in any supported OS.
+This service is supposed to be ran in Docker, although it is also possible to run it as a binary built using a native Rust compiler in any supported OS.
 
 ## Run using pre-built image from GitHub Packages (recommended)
 
