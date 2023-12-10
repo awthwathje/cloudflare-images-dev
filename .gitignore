@@ -1,0 +1,28 @@
+# Compiled files
+*.o
+*.so
+*.rlib
+*.dll
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Cargo artifacts
+/target/
+**/*.rs.bk
+
+# Rustup and rustc artifacts
+/rust/
+
+# Uploaded files
+.files
+
+# IDE/Editor folders
+.idea/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
