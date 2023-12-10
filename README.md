@@ -52,7 +52,7 @@ The default variables from `constants.rs` will be used, unless you pass them as 
 You can build and run your own Docker image, so you don't have to manage the dependencies yourself (such as Rust).
 
 - Build the container: `docker build --tag cloudflare_images_dev .`.
-- Run the container: `docker run --rm --env HOSTNAME=127.0.0.1 --env PORT=3030 --publish 3030:3030 cloudflare_images_dev`
+- Run the container: `docker run --rm --env HOSTNAME=127.0.0.1 --env PORT=3030 --publish 3030:3030 cloudflare_images_dev`.
 
 Or, if you prefer Docker Compose:
 
