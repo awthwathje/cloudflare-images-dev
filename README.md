@@ -45,7 +45,7 @@ If you already have Rust compiler installed, and assuming `cargo` command is ava
 
 - Use `cargo run` to build & run the project in one go.
 
-The default variables from `constants.rs` will be used, unless you pass them as env variables, for example like this `DEFAULT_ACCOUNT_ID="some-account-id" VARIANTS="foo,bar,baz" cargo run`.
+The default variables from `constants.rs` will be used, unless you pass them as env variables, for example like this `ACCOUNT_ID="mocked-account-id" VARIANTS="foo,bar,baz" cargo run`.
 
 ### Using Docker
 
