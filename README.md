@@ -1,5 +1,5 @@
 # Cloudflare Images Dev
-This goal of this project is to create a service which mocks the [Cloudflare Images](https://www.cloudflare.com/developer-platform/cloudflare-images/) API, for local development purposes.
+A project to mock the [Cloudflare Images](https://www.cloudflare.com/developer-platform/cloudflare-images/) API, for local development purposes.
 
 ## Purpose & limitations
 
