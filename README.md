@@ -1,5 +1,4 @@
-# cloudflare-images-dev
-
+# Cloudflare Images Dev
 This service mocks the [Cloudflare Images](https://www.cloudflare.com/developer-platform/cloudflare-images/) API, for local development purposes.
 
 ## Purpose & limitations
