@@ -21,7 +21,7 @@ version: '3.8'
 services:
   cloudflare_images_dev:
     build: .
-    image: TBD
+    image: ghcr.io/awthwathje/cloudflare-images-dev
     environment:
       - HOSTNAME=127.0.0.1
       - PORT=3030
