@@ -1,18 +1,17 @@
-# cloudflare-images-dev
-
-This service mocks the [Cloudflare Images](https://www.cloudflare.com/developer-platform/cloudflare-images/) API, for local development purposes.
+# Cloudflare Images Dev
+A project to mock the [Cloudflare Images](https://www.cloudflare.com/developer-platform/cloudflare-images/) API, for local development purposes.
 
 ## Purpose & limitations
 
-The idea of this local service is to mimic the API of Cloudflare Images, but not the functionality. Image optimizations are not required during the development anyway, but there should be a way to upload the images to this mocked service and be able to retrieve them.
+The idea of this project is to mimic the API of Cloudflare Images locally. Although the functionality is not mocked. That is, this service doesn't do any image optimizations, since these are not needed during the development anyway. Instead it only focuses on uploading and serving the images, locally, without using a cloud.
 
-The service will return some errors, for example when an unknown variant is requested, but will not try to make any effort to optimize images, and will always serve the originally uploaded image, no matter which variant is requested.
+The service will return some errors, for example when an unknown variant is requested. As the service will not make any effort to optimize images, it will always serve the originally uploaded image, no matter which variant is requested.
 
-This service is supposed to be ran in Docker, although it's also possible to run it using a native Rust compiler in any supported OS.
+This service is supposed to be ran in Docker, although it is also possible to run it as a binary built using a native Rust compiler in any supported OS.
 
 ## Run using pre-built image from GitHub Packages (recommended)
 
-This project has an Actions pipeline set up to automatically build a Docker image every time the project is updated. This way you don't have to build the service yourself and can use it immediately.
+This project has an Actions pipeline set up to automatically build a Docker image every time the project is updated. This way you don't have to build the service yourself and can satrt using it immediately.
 
 Example `docker-compose.yml`:
 
@@ -38,7 +37,7 @@ Run `docker-compose up` to start the container.
 
 ## Build it yourself
 
-If you want, you can clone this repo and build the project yourself. There are two options.
+If preferred, this repo can be cloned the project is built. There are two options.
 
 ### Using locally-available Rust compiler
 
@@ -46,7 +45,7 @@ If you already have Rust compiler installed, and assuming `cargo` command is ava
 
 - Use `cargo run` to build & run the project in one go.
 
-The default variables from `constants.rs` will be used, unless you pass them as env variables, for example like this `DEFAULT_ACCOUNT_ID="some-account-id" VARIANTS="foo,bar,baz" cargo run`.
+The default variables from `constants.rs` will be used, unless you pass them as env variables, for example like this `ACCOUNT_ID="mocked-account-id" VARIANTS="foo,bar,baz" cargo run`.
 
 ### Using Docker
 
