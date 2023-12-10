@@ -3,7 +3,7 @@ This service mocks the [Cloudflare Images](https://www.cloudflare.com/developer-
 
 ## Purpose & limitations
 
-The idea of this local service is to mimic the API of Cloudflare Images, but not the functionality. Image optimizations are not required during the development anyway, but there should be a way to upload the images to this mocked service and be able to retrieve them.
+The idea of this project is to mimic the API of Cloudflare Images locally. Although the functionality is not mocked. That is, this service doesn't do any image optimizations, since these are not needed during the development anyway. Instead it only focuses on uploading and serving the images, locally, without using a cloud.
 
 The service will return some errors, for example when an unknown variant is requested, but will not try to make any effort to optimize images, and will always serve the originally uploaded image, no matter which variant is requested.
 
