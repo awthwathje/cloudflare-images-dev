@@ -9,9 +9,9 @@ The service will return some errors, for example when an unknown variant is requ
 
 This service is supposed to be ran in Docker, although it is also possible to run it as a binary built using a native Rust compiler in any supported OS.
 
-## Run using pre-built image from GitHub Packages (recommended)
+## Run using a pre-built image from GitHub Packages (recommended)
 
-This project has an Actions pipeline set up to automatically build a Docker image every time the project is updated. This way you don't have to build the service yourself and can satrt using it immediately.
+This project has an Actions pipeline set up to automatically build a Docker image every time the project is updated. This way you don't have to build the service yourself and can start using it immediately.
 
 Example `docker-compose.yml`:
 
