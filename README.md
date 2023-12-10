@@ -63,7 +63,6 @@ version: '3.8'
 services:
   cloudflare_images_dev:
     build: .
-    image: cloudflare_images_dev
     environment:
       - HOSTNAME=127.0.0.1
       - PORT=3030
