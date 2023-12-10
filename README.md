@@ -37,7 +37,7 @@ Run `docker-compose up` to start the container.
 
 ## Build it yourself
 
-If you want, you can clone this repo and build the project yourself. There are two options.
+If preferred, this repo can be cloned the project is built. There are two options.
 
 ### Using locally-available Rust compiler
 
