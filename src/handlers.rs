@@ -1,3 +1,4 @@
+use super::constants::FILE_STORAGE_DIR;
 use super::responses::{ApiResponse, ImageResult};
 use super::variants::variants;
 use bytes::Buf;
@@ -27,7 +28,7 @@ pub async fn upload_image_handler(
             if let Some(filename) = part.filename() {
                 original_filename = filename.to_string();
 
-                let directory_path = "./.files/";
+                let directory_path = FILE_STORAGE_DIR;
                 let new_filename = format!(
                     "{}.{}",
                     image_id,
@@ -95,7 +96,7 @@ pub async fn serve_image_handler(
             .unwrap());
     }
 
-    let directory_path = PathBuf::from("./.files/");
+    let directory_path = PathBuf::from(FILE_STORAGE_DIR);
 
     let mut image_path = None;
 
@@ -137,8 +138,8 @@ pub async fn serve_image_handler(
         None => {
             eprintln!("Image not found: {}", image_id);
             let json_reply = warp::reply::json(&"Image not found");
-            let response = warp::reply::with_status(json_reply, warp::http::StatusCode::NOT_FOUND)
-                .into_response();
+            let response =
+                warp::reply::with_status(json_reply, StatusCode::NOT_FOUND).into_response();
             Ok(response)
         }
     }
