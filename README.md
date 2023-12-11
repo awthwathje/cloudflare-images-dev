@@ -19,8 +19,7 @@ Example `docker-compose.yml`:
 version: '3.8'
 services:
   cloudflare_images_dev:
-    build: .
-    image: ghcr.io/awthwathje/cloudflare-images-dev
+    image: ghcr.io/awthwathje/cloudflare-images-dev:main
     environment:
       - HOSTNAME=127.0.0.1
       - PORT=3030
