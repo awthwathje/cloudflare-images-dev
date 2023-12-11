@@ -82,6 +82,6 @@ Run `docker-compose up` to start the container.
 |--------------|---------------|-------------|
 | HOSTNAME     | 127.0.0.1     | The hostname where the service is running. |
 | PORT         | 3030          | The port on which the service is listening. |
-| ACCOUNT_ID   | account_id    | The account ID for the Cloudflare Images service. |
-| ACCOUNT_HASH | account_hash  | The account hash for the Cloudflare Images service. |
+| ACCOUNT_ID   | account-id    | The account ID for the Cloudflare Images service. |
+| ACCOUNT_HASH | account-hash  | The account hash for the Cloudflare Images service. |
 | VARIANTS     | variant1_1920_1080,variant2_640_480,variant3_40_40 | A comma-separated list of image variants. Format: `variantName_width_height`. |

@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  cloudflare_images_dev:
+    image: ghcr.io/awthwathje/cloudflare-images-dev
+    environment:
+      - HOSTNAME=127.0.0.1
+      - PORT=3030
+      - ACCOUNT_ID=account-id
+      - ACCOUNT_HASH=account-hash
+      - VARIANTS=variant1_1920_1080,variant2_640_480,variant3_40_40
+    ports:
+      - 3030:3030
+    volumes:
+      - ./.files:/.files # optional mount with pre-seeded images
