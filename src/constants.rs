@@ -7,3 +7,4 @@ pub const DEFAULT_VARIANTS: &str = "variant1,variant2,variant3";
 
 // non-env related
 pub const FILE_STORAGE_DIR: &str = "./.files/";
+pub const MAX_FILE_SIZE: u64 = 50 * 1_048_576; // 50 MB

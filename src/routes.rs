@@ -1,4 +1,4 @@
-use super::constants::DEFAULT_ACCOUNT_ID;
+use super::constants::{DEFAULT_ACCOUNT_ID, MAX_FILE_SIZE};
 use super::handlers::{serve_image_handler, upload_image_handler};
 use warp::Filter;
 
@@ -12,7 +12,7 @@ pub fn upload_route() -> impl Filter<Extract = impl warp::Reply, Error = warp::R
         .and(warp::path(account_id))
         .and(warp::path("images"))
         .and(warp::path("v1"))
-        .and(warp::multipart::form())
+        .and(warp::multipart::form().max_length(MAX_FILE_SIZE)) // 30 MB
         .and_then(upload_image_handler)
 }
 
