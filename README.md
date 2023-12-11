@@ -9,9 +9,9 @@ The service will return some errors, for example when an unknown variant is requ
 
 This service is supposed to be ran in Docker, although it is also possible to run it as a binary built using a native Rust compiler in any supported OS.
 
-## Run using pre-built image from GitHub Packages (recommended)
+## Run using a pre-built image from GitHub Packages (recommended)
 
-This project has an Actions pipeline set up to automatically build a Docker image every time the project is updated. This way you don't have to build the service yourself and can satrt using it immediately.
+This project has an Actions pipeline set up to automatically build a Docker image every time the project is updated. This way you don't have to build the service yourself and can start using it immediately.
 
 Example `docker-compose.yml`:
 
@@ -19,8 +19,7 @@ Example `docker-compose.yml`:
 version: '3.8'
 services:
   cloudflare_images_dev:
-    build: .
-    image: ghcr.io/awthwathje/cloudflare-images-dev
+    image: ghcr.io/awthwathje/cloudflare-images-dev:main
     environment:
       - HOSTNAME=127.0.0.1
       - PORT=3030
@@ -37,7 +36,7 @@ Run `docker-compose up` to start the container.
 
 ## Build it yourself
 
-If preferred, this repo can be cloned the project is built. There are two options.
+If preferred, this repo can be cloned and the project can be built manually. There are two options.
 
 ### Using locally-available Rust compiler
 
@@ -52,7 +51,7 @@ The default variables from `constants.rs` will be used, unless you pass them as 
 You can build and run your own Docker image, so you don't have to manage the dependencies yourself (such as Rust).
 
 - Build the container: `docker build --tag cloudflare_images_dev .`.
-- Run the container: `docker run --rm --env HOSTNAME=127.0.0.1 --env PORT=3030 --publish 3030:3030 cloudflare_images_dev`
+- Run the container: `docker run --rm --env HOSTNAME=127.0.0.1 --env PORT=3030 --publish 3030:3030 cloudflare_images_dev`.
 
 Or, if you prefer Docker Compose:
 
@@ -63,7 +62,6 @@ version: '3.8'
 services:
   cloudflare_images_dev:
     build: .
-    image: cloudflare_images_dev
     environment:
       - HOSTNAME=127.0.0.1
       - PORT=3030
