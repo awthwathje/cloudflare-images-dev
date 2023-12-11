@@ -4,6 +4,7 @@ mod constants;
 mod handlers;
 mod responses;
 mod routes;
+mod util;
 mod variants;
 
 #[tokio::main]

@@ -3,11 +3,11 @@ A project to mock the [Cloudflare Images](https://www.cloudflare.com/developer-p
 
 ## Purpose & limitations
 
-The idea of this project is to mimic the API of Cloudflare Images locally. Although the functionality is not mocked. That is, this service doesn't do any image optimizations, since these are not needed during the development anyway. Instead it only focuses on uploading and serving the images, locally, without using a cloud.
+The idea of this project is to mimic the API of Cloudflare Images locally. Not the full functionality of the original service is mocked. This service does resize the images to specified dimensions, but don't do any further optimizations, such as format negotiation and metadata stripping, since they are not needed during the development anyway. The goal is to allow to develop locally, without the need to rely on a cloud.
 
-The service will return some errors, for example when an unknown variant is requested. As the service will not make any effort to optimize images, it will always serve the originally uploaded image, no matter which variant is requested.
+Some errors are also mocked, for example when an unknown variant is requested.
 
-This service is supposed to be ran in Docker, although it is also possible to run it as a binary built using a native Rust compiler in any supported OS.
+Although this service is supposed to be ran in Docker, it is also possible to run it as a binary built using a native Rust compiler in any supported OS.
 
 ## Run using a pre-built image from GitHub Packages (recommended)
 
@@ -23,9 +23,9 @@ services:
     environment:
       - HOSTNAME=127.0.0.1
       - PORT=3030
-      - ACCOUNT_ID=account_id
-      - ACCOUNT_HASH=account_hash
-      - VARIANTS=variant1,variant2,variant3
+      - ACCOUNT_ID=account-id
+      - ACCOUNT_HASH=account-hash
+      - VARIANTS=variant1_1920_1080,variant2_640_480,variant3_40_40
     ports:
       - 3030:3030
     volumes:
@@ -65,9 +65,9 @@ services:
     environment:
       - HOSTNAME=127.0.0.1
       - PORT=3030
-      - ACCOUNT_ID=account_id
-      - ACCOUNT_HASH=account_hash
-      - VARIANTS=variant1,variant2,variant3
+      - ACCOUNT_ID=account-id
+      - ACCOUNT_HASH=account-hash
+      - VARIANTS=variant1_1920_1080,variant2_640_480,variant3_40_40
     ports:
       - 3030:3030
     volumes:
@@ -84,4 +84,4 @@ Run `docker-compose up` to start the container.
 | PORT         | 3030          | The port on which the service is listening. |
 | ACCOUNT_ID   | account_id    | The account ID for the Cloudflare Images service. |
 | ACCOUNT_HASH | account_hash  | The account hash for the Cloudflare Images service. |
-| VARIANTS     | variant1,variant2,variant3 | A comma-separated list of image variants. |
+| VARIANTS     | variant1_1920_1080,variant2_640_480,variant3_40_40 | A comma-separated list of image variants. Format: `variantName_width_height`. |

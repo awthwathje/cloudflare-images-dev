@@ -1,5 +1,6 @@
-use super::constants::{DEFAULT_ACCOUNT_ID, MAX_FILE_SIZE};
-use super::handlers::{serve_image_handler, upload_image_handler};
+use crate::constants::{DEFAULT_ACCOUNT_ID, MAX_FILE_SIZE};
+use crate::handlers::serve_image_handler::serve_image_handler;
+use crate::handlers::upload_image_handler::upload_image_handler;
 use warp::Filter;
 
 pub fn upload_route() -> impl Filter<Extract = impl warp::Reply, Error = warp::Rejection> + Clone {
